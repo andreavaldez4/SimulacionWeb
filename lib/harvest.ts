@@ -73,8 +73,12 @@ export function calcularCampo({ ancho, largo, anchoCorte, velocidad }: CampoPara
  * `maximumFractionDigits` se fija por salida para que los números grandes no
  * se vuelvan ilegibles en móvil.
  */
-export function formatearNumero(valor: number, decimales: number): string {
-  return valor.toLocaleString('es-MX', {
+export function formatearNumero(
+  valor: number,
+  decimales: number,
+  locale = 'en-US',
+): string {
+  return valor.toLocaleString(locale, {
     minimumFractionDigits: decimales,
     maximumFractionDigits: decimales,
   })

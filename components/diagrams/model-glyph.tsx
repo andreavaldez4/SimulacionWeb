@@ -16,7 +16,7 @@ const glyphs: Record<string, React.ReactNode> = {
       <circle cx="64" cy="48" r="9" {...stroke} />
     </>
   ),
-  Remolque: (
+  Trailer: (
     <>
       <path d="M12 24h58v18H12z" {...stroke} />
       <path d="M70 38h10" {...stroke} />
@@ -24,7 +24,7 @@ const glyphs: Record<string, React.ReactNode> = {
       <circle cx="56" cy="48" r="6" {...stroke} />
     </>
   ),
-  Cosechadora: (
+  "Combine harvester": (
     <>
       <path d="M10 44h16v-6h12V22h22v22h18" {...stroke} />
       <path d="M10 44v-8h12" {...stroke} />
@@ -32,7 +32,7 @@ const glyphs: Record<string, React.ReactNode> = {
       <circle cx="76" cy="49" r="6" {...stroke} />
     </>
   ),
-  Granja: (
+  Farmhouse: (
     <>
       <path d="M18 50V28l26-14 26 14v22z" {...stroke} />
       <path d="M38 50V36h12v14" {...stroke} />
@@ -44,23 +44,23 @@ const glyphs: Record<string, React.ReactNode> = {
       <path d="M30 36h28M30 44h28" {...stroke} />
     </>
   ),
-  Espantapájaros: (
+  Scarecrow: (
     <>
       <circle cx="44" cy="20" r="7" {...stroke} />
       <path d="M44 27v18M24 34h40M44 45l-8 12M44 45l8 12" {...stroke} />
     </>
   ),
-  Barda: (
+  Fence: (
     <>
       <path d="M16 24v28M32 24v28M48 24v28M64 24v28M78 24v28" {...stroke} />
       <path d="M10 32h74M10 44h74" {...stroke} />
     </>
   ),
-  Árboles: (
+  Trees: (
     <>
       <path d="M30 46a12 12 0 1 1 0-16 11 11 0 0 1 18 4 10 10 0 0 1-6 12z" {...stroke} />
       <path d="M34 46v10" {...stroke} />
-      {/* Pino: tres niveles de copa sobre un tronco. */}
+      {/* Pine: layered canopy over a trunk. */}
       <rect x="62" y="46" width="4" height="10" {...solid} />
       <path d="M64 20l-9 12h18z" {...stroke} />
       <path d="M64 30l-11 14h22z" {...stroke} />

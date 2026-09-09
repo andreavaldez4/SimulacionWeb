@@ -41,10 +41,7 @@ const espigas = Array.from({ length: 120 }, (_, i) => ({
 export function DiagramRejilla() {
   return (
     <svg viewBox="0 -14 320 204" className="h-auto w-full" role="img" aria-labelledby="d-rej-t">
-      <title id="d-rej-t">
-        Campo dividido en una rejilla de celdas con espigas distribuidas; solo las cuatro celdas
-        que toca el cabezal aparecen resaltadas
-      </title>
+      <title id="d-rej-t">{algoritmo.alts.rejilla}</title>
 
       <rect {...{ x: OUTER.x, y: OUTER.y, width: OUTER.w, height: OUTER.h }} fill={D.field} stroke={D.fieldEdge} strokeWidth="2" />
 

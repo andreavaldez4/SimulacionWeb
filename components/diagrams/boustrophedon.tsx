@@ -1,3 +1,5 @@
+import { algoritmo } from '@/content/project'
+
 import { D } from './tokens'
 
 /**
@@ -46,10 +48,7 @@ const path = buildPath()
 export function DiagramBoustrophedon() {
   return (
     <svg viewBox="0 0 320 190" className="h-auto w-full" role="img" aria-labelledby="d-bous-t">
-      <title id="d-bous-t">
-        Campo rectangular recorrido por seis carriles paralelos unidos por giros de 180 grados en
-        los extremos
-      </title>
+      <title id="d-bous-t">{algoritmo.alts.boustrophedon}</title>
 
       <rect
         x={FIELD.x}

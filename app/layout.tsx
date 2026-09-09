@@ -28,13 +28,13 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={robotoCondensed.variable}>
+    <html lang="en" className={robotoCondensed.variable}>
       <body className="bg-bone text-ink">
         <a
           href="#inicio"
           className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-green-dark focus:px-4 focus:py-2 focus:font-bold focus:text-white"
         >
-          Saltar al contenido
+          Skip to content
         </a>
         <SiteNav />
         {children}

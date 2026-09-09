@@ -94,7 +94,7 @@ export function FieldPreview({
 
       <figcaption className="mt-2 text-sm text-ink-muted">
         {calculadora.previewLabel} · {ancho} × {largo} m
-        {raleado ? ` · 1 carril de cada ${step}` : ''}
+        {raleado ? ` · ${calculadora.previewThinned(step)}` : ''}
       </figcaption>
     </figure>
   )

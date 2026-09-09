@@ -23,10 +23,7 @@ const GAP = INNER.w / (LANES + 1)
 export function DiagramCabecera() {
   return (
     <svg viewBox="0 0 320 190" className="h-auto w-full" role="img" aria-labelledby="d-cab-t">
-      <title id="d-cab-t">
-        Campo con una franja perimetral reservada, marcada con línea punteada, donde la máquina
-        gira sin salirse del terreno
-      </title>
+      <title id="d-cab-t">{algoritmo.alts.cabecera}</title>
 
       <rect {...{ x: OUTER.x, y: OUTER.y, width: OUTER.w, height: OUTER.h }} fill={D.field} stroke={D.fieldEdge} strokeWidth="2" />
 

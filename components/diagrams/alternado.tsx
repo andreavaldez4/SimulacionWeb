@@ -103,14 +103,14 @@ export function DiagramAlternado() {
         label={algoritmo.labels.secuencial}
         tight
         titleId="d-seq-t"
-        description="Recorrido secuencial: los carriles se visitan en orden y el giro entre carriles contiguos es demasiado cerrado"
+        description={algoritmo.alts.secuencial}
       />
       <Panel
         order={[0, 2, 1, 3]}
         label={algoritmo.labels.alternado}
         tight={false}
         titleId="d-alt-t"
-        description="Recorrido alternado: se salta un carril y se regresa después, dando al giro el doble de espacio"
+        description={algoritmo.alts.alternado}
       />
     </div>
   )

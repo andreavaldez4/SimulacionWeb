@@ -90,16 +90,33 @@ function SiteNav() {
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "mx-auto flex w-full max-w-[1100px] items-stretch md:items-center md:justify-between md:px-4",
             children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: "hidden eyebrow text-white md:block",
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                    href: "#inicio",
+                    className: "hidden items-center gap-2 eyebrow text-white md:flex",
                     children: [
-                        __TURBOPACK__imported__module__$5b$project$5d2f$content$2f$project$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nav"].brand.primary,
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "text-jd-yellow",
-                            children: __TURBOPACK__imported__module__$5b$project$5d2f$content$2f$project$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nav"].brand.accent
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(BrandMark, {
+                            className: "h-5 w-auto text-jd-yellow"
                         }, void 0, false, {
                             fileName: "[project]/components/site-nav.tsx",
-                            lineNumber: 58,
+                            lineNumber: 60,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            children: [
+                                __TURBOPACK__imported__module__$5b$project$5d2f$content$2f$project$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nav"].brand.primary,
+                                " ",
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-jd-yellow",
+                                    children: __TURBOPACK__imported__module__$5b$project$5d2f$content$2f$project$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nav"].brand.accent
+                                }, void 0, false, {
+                                    fileName: "[project]/components/site-nav.tsx",
+                                    lineNumber: 63,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/site-nav.tsx",
+                            lineNumber: 61,
                             columnNumber: 11
                         }, this)
                     ]
@@ -124,18 +141,18 @@ function SiteNav() {
                                 children: item.label
                             }, void 0, false, {
                                 fileName: "[project]/components/site-nav.tsx",
-                                lineNumber: 66,
+                                lineNumber: 72,
                                 columnNumber: 17
                             }, this)
                         }, item.id, false, {
                             fileName: "[project]/components/site-nav.tsx",
-                            lineNumber: 65,
+                            lineNumber: 71,
                             columnNumber: 15
                         }, this);
                     })
                 }, void 0, false, {
                     fileName: "[project]/components/site-nav.tsx",
-                    lineNumber: 61,
+                    lineNumber: 67,
                     columnNumber: 9
                 }, this)
             ]
@@ -155,8 +172,8 @@ function SiteNav() {
 "use strict";
 
 /**
- * Fuente única de todo el texto visible del sitio.
- * Ningún componente debe contener strings de copy: todo se importa de aquí.
+ * Single source of every visible string on the site.
+ * No component should contain copy strings: everything is imported from here.
  */ __turbopack_context__.s([
     "algoritmo",
     ()=>algoritmo,
@@ -178,214 +195,214 @@ function SiteNav() {
     ()=>site
 ]);
 const site = {
-    title: 'MultiagentesReto — Cosecha autónoma simulada en Unity 6',
-    description: 'Simulación multiagente de una granja de trigo autónoma: una cosechadora líder y un tractor seguidor recorriendo un campo procedural. Proyecto universitario presentado a John Deere como socio formador.'
+    title: "Agentic Harvest | Autonomous harvesting simulated in Unity 6",
+    description: "Multi-agent simulation of an autonomous wheat farm: a lead combine harvester and a follower tractor working a procedural field. University project presented to John Deere as training partner."
 };
 const nav = {
     brand: {
-        primary: 'Multiagentes',
-        accent: 'Reto'
+        primary: "Agentic",
+        accent: "Harvest"
     },
-    ariaLabel: 'Navegación principal',
+    ariaLabel: "Main navigation",
     items: [
         {
-            id: 'inicio',
-            label: 'Inicio'
+            id: "inicio",
+            label: "Home"
         },
         {
-            id: 'algoritmo',
-            label: 'Algoritmo'
+            id: "algoritmo",
+            label: "Algorithm"
         },
         {
-            id: 'calculadora',
-            label: 'Calculadora'
+            id: "calculadora",
+            label: "Calculator"
         },
         {
-            id: 'equipo',
-            label: 'Equipo'
+            id: "equipo",
+            label: "Team"
         }
     ]
 };
 const hero = {
-    id: 'inicio',
-    eyebrow: 'Reto — Socio formador John Deere',
-    title: 'Una cosechadora que decide sola por dónde pasar',
-    subtitle: 'Simulación multiagente en Unity 6: una cosechadora líder y un tractor con remolque cosechando un campo de trigo generado por procedimiento.',
+    id: "inicio",
+    eyebrow: "Challenge · John Deere training partner",
+    title: "A combine that decides its own path",
+    subtitle: "Multi-agent simulation in Unity 6: a lead combine harvester and a tractor with trailer working a procedurally generated wheat field.",
     video: {
-        label: 'Simulación en Unity 6',
-        caption: 'Grabación de la simulación corriendo en tiempo real.',
+        label: "Unity 6 simulation",
+        caption: "Recording of the simulation running in real time.",
         /**
-     * Ruta del video servida desde /public: no depende de la API ni de la red.
-     * Déjala vacía mientras no exista el archivo; el componente muestra un
-     * placeholder estático en vez de un reproductor que se queda cargando.
-     * Para publicar: coloca el archivo en public/media/simulacion.mp4 y pon
-     * aquí '/media/simulacion.mp4'.
-     */ fallbackSrc: '',
-        posterAlt: 'Vista de la simulación de cosecha autónoma en Unity 6',
-        unavailable: 'La demo corre en vivo en el proyector durante la presentación.'
+     * Video path served from /public: depends on neither the API nor the network.
+     * Leave it empty while the file does not exist; the component shows a static
+     * placeholder instead of a player stuck loading.
+     * To publish: drop the file at public/media/simulacion.mp4 and set this to
+     * '/media/simulacion.mp4'.
+     */ fallbackSrc: "",
+        posterAlt: "View of the autonomous harvesting simulation in Unity 6",
+        unavailable: "The demo runs live on the projector during the presentation."
     },
     metrics: [
         {
-            value: '4',
-            label: 'cámaras'
+            value: "4",
+            label: "cameras"
         },
         {
-            value: '15 s',
-            label: 'por vuelta'
+            value: "15 s",
+            label: "per lap"
         },
         {
-            value: '1,200+',
-            label: 'espigas'
+            value: "1,200+",
+            label: "wheat stalks"
         }
     ],
     cta: {
-        label: 'Cómo funciona',
-        href: '#algoritmo'
+        label: "How it works",
+        href: "#algoritmo"
     }
 };
 const algoritmo = {
-    id: 'algoritmo',
-    eyebrow: '01 — Algoritmo',
-    title: 'Lo que la demo no alcanza a explicar',
-    intro: 'En el proyector se ve el resultado: las máquinas se mueven y el trigo desaparece. Estas cuatro decisiones son las que hacen que ese movimiento sea eficiente y no una caminata al azar.',
+    id: "algoritmo",
+    eyebrow: "01 · Algorithm",
+    title: "What the demo cannot explain on its own",
+    intro: "The projector shows the result: the machines move and the wheat disappears. These four decisions are what make that movement efficient rather than a random walk.",
     diagrams: [
         {
-            id: 'boustrophedon',
-            title: 'Recorrido en surco',
-            body: 'El campo se divide en carriles paralelos del ancho exacto del cabezal. La máquina recorre uno completo, gira 180° en la cabecera y entra al siguiente en sentido contrario. Es el mismo patrón que sigue un arado: ida y vuelta, sin levantar el corte.'
+            id: "boustrophedon",
+            title: "Furrow path",
+            body: "The field is split into parallel lanes exactly as wide as the header. The machine runs one lane end to end, turns 180 degrees at the headland and enters the next one in the opposite direction. It is the same pattern a plough follows: back and forth, without lifting the cut."
         },
         {
-            id: 'alternado',
-            title: 'Secuencial vs. carriles alternados',
-            body: 'Entrar al carril inmediatamente contiguo exigiría un giro más cerrado que el radio real de la máquina. Por eso el recorrido salta un carril y regresa después por los que dejó pendientes: cada giro tiene el espacio que la cosechadora necesita físicamente.'
+            id: "alternado",
+            title: "Sequential vs. alternating lanes",
+            body: "Entering the immediately adjacent lane would demand a tighter turn than the machine's real turning radius allows. So the route skips a lane and comes back later for the ones it left: every turn gets the space the combine physically needs."
         },
         {
-            id: 'cabecera',
-            title: 'Recorte de cabecera',
-            body: 'Antes de trazar los carriles, el algoritmo reserva una franja perimetral del ancho del radio de giro. Los carriles solo ocupan el rectángulo interior, y la cabecera queda libre para maniobrar sin salirse del campo.'
+            id: "cabecera",
+            title: "Headland trim",
+            body: "Before laying out the lanes, the algorithm reserves a perimeter strip as wide as the turning radius. The lanes only occupy the inner rectangle, and the headland stays clear for manoeuvring without leaving the field."
         },
         {
-            id: 'rejilla',
-            title: 'Rejilla espacial',
-            body: 'El campo se subdivide en celdas y cada espiga se registra en la suya. En vez de revisar más de mil espigas por frame para saber cuáles corta el cabezal, solo se consultan las celdas que el cabezal toca en ese instante.'
+            id: "rejilla",
+            title: "Spatial grid",
+            body: "The field is subdivided into cells and every stalk is registered in its own. Instead of checking more than a thousand stalks per frame to know which ones the header cuts, only the cells the header touches at that instant are queried."
         }
     ],
     labels: {
-        secuencial: 'Secuencial',
-        alternado: 'Alternado',
-        cabecera: 'Cabecera reservada',
-        cabezal: 'Celdas consultadas'
+        secuencial: "Sequential",
+        alternado: "Alternating",
+        cabecera: "Reserved headland",
+        cabezal: "Queried cells"
     }
 };
 const arquitectura = {
-    id: 'arquitectura',
-    eyebrow: '02 — Arquitectura',
-    title: 'Del panel de configuración al campo',
-    intro: 'La configuración se define antes de entrar a la simulación y viaja entre escenas. Ya dentro, la cosechadora es la única que decide la ruta; el tractor reacciona a ella.',
+    id: "arquitectura",
+    eyebrow: "02 · Architecture",
+    title: "From the configuration panel to the field",
+    intro: "The configuration is defined before entering the simulation and travels between scenes. Once inside, the combine is the only one that decides the route; the tractor reacts to it.",
     flow: [
         {
-            title: 'Panel de configuración',
-            detail: 'El usuario define el campo y las máquinas antes de arrancar.'
+            title: "Configuration panel",
+            detail: "The user defines the field and the machines before starting."
         },
         {
-            title: 'ConfiguracionSimulacion',
-            detail: 'Conserva esos valores al cambiar de escena.'
+            title: "ConfiguracionSimulacion",
+            detail: "Preserves those values across the scene change."
         },
         {
-            title: 'Escena de simulación',
-            detail: 'Genera el terreno, las espigas y los agentes.'
+            title: "Simulation scene",
+            detail: "Generates the terrain, the stalks and the agents."
         },
         {
-            title: 'Cosechadora (líder)',
-            detail: 'Calcula la ruta en surco y ejecuta el corte.'
+            title: "Combine harvester (leader)",
+            detail: "Computes the furrow route and performs the cut."
         },
         {
-            title: 'Tractor (seguidor)',
-            detail: 'Mantiene la posición lateral respecto a la líder.'
+            title: "Tractor (follower)",
+            detail: "Holds its lateral position relative to the leader."
         }
     ],
-    scriptsTitle: 'Scripts del proyecto',
+    scriptsTitle: "Project scripts",
     scripts: [
         {
-            name: 'Cosechadora.cs',
-            description: 'Traza los carriles, ejecuta los giros de cabecera y corta las espigas del cabezal.'
+            name: "Cosechadora.cs",
+            description: "Lays out the lanes, executes the headland turns and cuts the stalks under the header."
         },
         {
-            name: 'TractorAlLado.cs',
-            description: 'Mantiene el tractor y su remolque a un costado de la cosechadora mientras avanza.'
+            name: "TractorAlLado.cs",
+            description: "Keeps the tractor and its trailer alongside the combine as it advances."
         },
         {
-            name: 'ParcelaSpawner.cs',
-            description: 'Genera por procedimiento el terreno, las espigas y los elementos del entorno.'
+            name: "ParcelaSpawner.cs",
+            description: "Procedurally generates the terrain, the stalks and the environment props."
         },
         {
-            name: 'PanelConfiguracionUI.cs',
-            description: 'Construye la interfaz donde se ajustan los parámetros antes de simular.'
+            name: "PanelConfiguracionUI.cs",
+            description: "Builds the interface where the parameters are set before simulating."
         },
         {
-            name: 'ConfiguracionSimulacion.cs',
-            description: 'Puente de datos que sobrevive al cambio de escena y transporta la configuración.'
+            name: "ConfiguracionSimulacion.cs",
+            description: "Data bridge that survives the scene change and carries the configuration."
         },
         {
-            name: 'SelectorModelo.cs',
-            description: 'Permite elegir qué modelo 3D se instancia para cada máquina.'
+            name: "SelectorModelo.cs",
+            description: "Lets you choose which 3D model is instantiated per machine."
         },
         {
-            name: 'CameraMove.cs',
-            description: 'Controla las cuatro cámaras de observación y el cambio entre ellas.'
+            name: "CameraMove.cs",
+            description: "Drives the four observation cameras and the switching between them."
         }
     ],
-    chipsTitle: 'Stack',
+    chipsTitle: "Stack",
     chips: [
-        'Unity 6',
-        'URP',
-        'Input System',
-        'Shader Graph',
-        'NavMesh',
-        'TextMeshPro'
+        "Unity 6",
+        "URP",
+        "Input System",
+        "Shader Graph",
+        "NavMesh",
+        "TextMeshPro"
     ]
 };
 const calculadora = {
-    id: 'calculadora',
-    eyebrow: '03 — Calculadora',
-    title: 'Las mismas cuentas, con tus números',
-    intro: 'Mueve los controles y el campo de la derecha se redibuja. Todo el cálculo ocurre en tu teléfono: no hay ninguna llamada de red detrás de estos números.',
+    id: "calculadora",
+    eyebrow: "03 · Calculator",
+    title: "The same maths, with your numbers",
+    intro: "Move the controls and the field redraws. Every calculation happens on your phone: there is no network call behind these numbers.",
     sliders: [
         {
-            id: 'ancho',
-            label: 'Ancho del campo',
-            unit: 'm',
-            unitLong: 'metros',
+            id: "ancho",
+            label: "Field width",
+            unit: "m",
+            unitLong: "metres",
             min: 50,
             max: 500,
             step: 5,
             defaultValue: 200
         },
         {
-            id: 'largo',
-            label: 'Largo del campo',
-            unit: 'm',
-            unitLong: 'metros',
+            id: "largo",
+            label: "Field length",
+            unit: "m",
+            unitLong: "metres",
             min: 50,
             max: 800,
             step: 5,
             defaultValue: 500
         },
         {
-            id: 'anchoCorte',
-            label: 'Ancho de corte',
-            unit: 'm',
-            unitLong: 'metros',
+            id: "anchoCorte",
+            label: "Cutting width",
+            unit: "m",
+            unitLong: "metres",
             min: 3,
             max: 15,
             step: 1,
             defaultValue: 9
         },
         {
-            id: 'velocidad',
-            label: 'Velocidad',
-            unit: 'km/h',
-            unitLong: 'kilómetros por hora',
+            id: "velocidad",
+            label: "Speed",
+            unit: "km/h",
+            unitLong: "kilometres per hour",
             min: 2,
             max: 12,
             step: 0.5,
@@ -394,164 +411,177 @@ const calculadora = {
     ],
     results: [
         {
-            id: 'carriles',
-            label: 'Carriles',
-            unit: ''
+            id: "carriles",
+            label: "Lanes",
+            unit: ""
         },
         {
-            id: 'distanciaKm',
-            label: 'Distancia recorrida',
-            unit: 'km'
+            id: "distanciaKm",
+            label: "Distance travelled",
+            unit: "km"
         },
         {
-            id: 'tiempoH',
-            label: 'Tiempo estimado',
-            unit: 'h'
+            id: "tiempoH",
+            label: "Estimated time",
+            unit: "h"
         },
         {
-            id: 'areaHa',
-            label: 'Área cosechada',
-            unit: 'ha'
+            id: "areaHa",
+            label: "Area harvested",
+            unit: "ha"
         }
     ],
-    previewLabel: 'Vista del campo',
-    previewAlt: 'Vista superior del campo con los carriles de cosecha calculados',
-    footnote: 'Las mismas fórmulas que corren en la simulación.'
+    previewLabel: "Field view",
+    previewAlt: "Top view of the field with the computed harvesting lanes",
+    footnote: "The same formulas that run in the simulation.",
+    /** Locale used to format the output numbers. */ locale: "en-US"
 };
 const equipo = {
-    id: 'equipo',
-    eyebrow: '04 — Equipo y modelado 3D',
-    title: 'Todos los modelos son nuestros',
-    intro: 'No se usó ningún asset de tienda. Cada máquina, edificio y pieza del entorno fue modelada por el equipo para este proyecto.',
-    modelsTitle: 'Modelos del proyecto',
-    models: [
+    id: "equipo",
+    eyebrow: "04 · Team and 3D modelling",
+    title: "Every model is our own",
+    intro: "No store assets were used. Every machine, building and piece of the environment was modelled by the team for this project.",
+    modelsTitle: "Project models",
+    /**
+   * Each card points at an image under /public/models. Drop a file at the path
+   * below (any name you like, just keep the path in sync) and it replaces the
+   * drawn placeholder automatically.
+   */ models: [
         {
-            name: 'Tractor',
-            author: 'Andrés'
+            name: "Tractor",
+            author: "Andrés",
+            image: "/models/tractor.png"
         },
         {
-            name: 'Remolque',
-            author: 'Andrés'
+            name: "Trailer",
+            author: "Andrés",
+            image: "/models/trailer.png"
         },
         {
-            name: 'Cosechadora',
-            author: 'Iván'
+            name: "Combine harvester",
+            author: "Iván",
+            image: "/models/combine.png"
         },
         {
-            name: 'Granja',
-            author: 'Andrés'
+            name: "Farmhouse",
+            author: "Andrés",
+            image: "/models/farmhouse.png"
         },
         {
-            name: 'Silo',
-            author: 'Samantha'
+            name: "Silo",
+            author: "Samantha",
+            image: "/models/silo.png"
         },
         {
-            name: 'Espantapájaros',
-            author: 'Andrea'
+            name: "Scarecrow",
+            author: "Andrea",
+            image: "/models/scarecrow.png"
         },
         {
-            name: 'Barda',
-            author: 'Andrés'
+            name: "Fence",
+            author: "Andrés",
+            image: "/models/fence.png"
         },
         {
-            name: 'Árboles',
-            author: 'Marcelo'
+            name: "Trees",
+            author: "Marcelo",
+            image: "/models/trees.png"
         }
     ],
-    membersTitle: 'Integrantes',
+    membersTitle: "Team members",
     members: [
         {
-            name: 'Andrés',
-            contribution: 'Tractor, remolque, llantas, granja y barda.'
+            name: "Andrés",
+            contribution: "Tractor, trailer, wheels, farmhouse and fence."
         },
         {
-            name: 'Samantha',
-            contribution: 'Silo y modelo de trigo.'
+            name: "Samantha",
+            contribution: "Silo and wheat model."
         },
         {
-            name: 'Andrea',
-            contribution: 'Espantapájaros, piso de rocas, pasto y panel de configuración.'
+            name: "Andrea",
+            contribution: "Scarecrow, rock floor, grass and configuration panel."
         },
         {
-            name: 'Iván',
-            contribution: 'Cosechadora y elementos de escena.'
+            name: "Iván",
+            contribution: "Combine harvester and scene props."
         },
         {
-            name: 'Marcelo',
-            contribution: 'Árboles y elementos de escena.'
+            name: "Marcelo",
+            contribution: "Trees and scene props."
         }
     ]
 };
 const roadmap = {
-    id: 'roadmap',
-    eyebrow: '05 — Roadmap',
-    title: 'Lo entregado y lo que sigue',
-    doneTitle: 'Entregado',
+    id: "roadmap",
+    eyebrow: "05 · Roadmap",
+    title: "What shipped and what comes next",
+    doneTitle: "Shipped",
     done: [
         {
-            title: 'Ruta procedural',
-            detail: 'Carriles y giros calculados a partir del tamaño del campo.'
+            title: "Procedural route",
+            detail: "Lanes and turns computed from the field dimensions."
         },
         {
-            title: 'Corte optimizado con rejilla espacial',
-            detail: 'Consulta por celdas vecinas en lugar de recorrer todas las espigas.'
+            title: "Cutting optimised with a spatial grid",
+            detail: "Neighbour cell lookups instead of walking every stalk."
         },
         {
-            title: 'Tractor acompañante',
-            detail: 'Seguimiento lateral de la cosechadora con remolque enganchado.'
+            title: "Companion tractor",
+            detail: "Lateral following of the combine with the trailer hitched."
         },
         {
-            title: 'Poblado procedural del terreno',
-            detail: 'Espigas, árboles y entorno generados en cada corrida.'
+            title: "Procedural terrain population",
+            detail: "Stalks, trees and environment generated on every run."
         },
         {
-            title: 'Panel de configuración',
-            detail: 'Parámetros ajustables antes de iniciar la simulación.'
+            title: "Configuration panel",
+            detail: "Parameters adjustable before the simulation starts."
         },
         {
-            title: '4 cámaras',
-            detail: 'Vistas alternables para observar el sistema desde distintos ángulos.'
+            title: "Four cameras",
+            detail: "Switchable views to observe the system from several angles."
         }
     ],
-    nextTitle: 'Siguiente',
+    nextTitle: "Next",
     next: [
         {
-            title: 'Tractor como agente autónomo real',
-            detail: 'Decisiones propias en vez de seguimiento rígido de la líder.'
+            title: "Tractor as a real autonomous agent",
+            detail: "Its own decisions instead of rigid following of the leader."
         },
         {
-            title: 'Instanciar N máquinas según configuración',
-            detail: 'Flotilla de tamaño variable coordinándose sobre el mismo campo.'
+            title: "Instantiate N machines from configuration",
+            detail: "A fleet of variable size coordinating over the same field."
         },
         {
-            title: 'Evasión de obstáculos con NavMesh',
-            detail: 'Rutas que esquivan entorno y otras máquinas sin detenerse.'
+            title: "Obstacle avoidance with NavMesh",
+            detail: "Routes that dodge environment and other machines without stopping."
         },
         {
-            title: 'Métricas de eficiencia por máquina',
-            detail: 'Distancia, solape y tiempo muerto medidos por agente.'
+            title: "Efficiency metrics per machine",
+            detail: "Distance, overlap and idle time measured per agent."
         }
     ],
-    businessTitle: 'Por qué importa',
-    business: 'Cada una de estas piezas apunta al mismo lugar: agricultura de precisión. Una ruta bien trazada consume menos combustible, un patrón de carriles sin solape evita cosechar dos veces la misma franja, y una flotilla que se coordina sola reduce el tiempo muerto entre pasadas. Lo que aquí es una simulación universitaria es, en campo, margen operativo medible.'
+    businessTitle: "Why it matters",
+    business: "Every one of these pieces points at the same place: precision agriculture. A well planned route burns less fuel, a lane pattern without overlap avoids harvesting the same strip twice, and a fleet that coordinates on its own cuts the idle time between passes. What is a university simulation here is, out in the field, measurable operating margin."
 };
 const footer = {
-    teamTitle: 'Equipo',
+    teamTitle: "Team",
     team: [
-        'Andrés',
-        'Samantha',
-        'Andrea',
-        'Iván',
-        'Marcelo'
+        "Andrés",
+        "Samantha",
+        "Andrea",
+        "Iván",
+        "Marcelo"
     ],
-    university: 'Tecnológico de Monterrey',
-    course: 'Modelación de sistemas multiagentes con gráficas computacionales',
+    university: "Tecnológico de Monterrey",
+    course: "Multi-agent systems modelling with computer graphics",
     repo: {
-        label: 'Repositorio en GitHub',
-        href: 'https://github.com'
+        label: "GitHub repository",
+        href: "https://github.com"
     },
-    tagline: 'Presentado a John Deere — Socio formador',
-    disclaimer: 'Proyecto académico independiente. No afiliado a Deere & Company ni a sus marcas; la paleta es un homenaje, no una identidad oficial.'
+    tagline: "Presented to John Deere · Training partner",
+    disclaimer: "Independent academic project. Not affiliated with or endorsed by Deere & Company or its brands; the palette is a tribute, not an official identity."
 };
 }),
 ];

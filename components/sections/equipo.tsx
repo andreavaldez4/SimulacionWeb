@@ -1,4 +1,4 @@
-import { ModelGlyph } from '@/components/diagrams/model-glyph'
+import { ModelCardImage } from '@/components/model-card-image'
 import { Section, SectionHeader } from '@/components/section'
 import { equipo } from '@/content/project'
 
@@ -12,7 +12,11 @@ export function Equipo() {
         {equipo.models.map((model) => (
           <li key={model.name} className="border border-line bg-white">
             <div className="border-b border-line bg-bone p-3 surco-texture">
-              <ModelGlyph name={model.name} />
+              <ModelCardImage
+                src={model.image}
+                name={model.name}
+                alt={model.name}
+              />
             </div>
             <div className="p-3">
               <p className="font-bold text-green-dark">{model.name}</p>

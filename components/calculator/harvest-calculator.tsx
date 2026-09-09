@@ -29,9 +29,12 @@ function Slider({
         <label htmlFor={id} className="font-medium text-green-dark">
           {copy.label}
         </label>
-        <output htmlFor={id} className="text-2xl leading-none font-bold text-jd-green">
+        <output
+          htmlFor={id}
+          className="text-2xl leading-none font-bold text-green-dark tabular-nums"
+        >
           {value}
-          <span className="ml-1 text-sm font-medium text-ink-muted">{copy.unit}</span>
+          <span className="ml-1 text-sm font-medium text-jd-green">{copy.unit}</span>
         </output>
       </div>
       <input
@@ -81,19 +84,33 @@ export function HarvestCalculator() {
           />
         ))}
 
+        {/* KPIs: el número manda. La etiqueta va arriba y en menor jerarquía
+            para que la vista aterrice primero en la cifra, y la unidad se
+            queda en blanco (no en verde apagado) para que se lea a distancia. */}
         <dl
           aria-live="polite"
-          className="mt-8 grid grid-cols-2 gap-px border border-line bg-line"
+          className="mt-8 grid grid-cols-2 gap-1 bg-green-rule p-1"
         >
           {calculadora.results.map((r) => (
-            <div key={r.id} className="bg-green-dark p-4">
-              <dd className="text-3xl leading-none font-bold text-jd-yellow">
-                {formatearNumero(resultado[r.id], DECIMALES[r.id])}
+            <div
+              key={r.id}
+              className="border-l-4 border-jd-yellow bg-green-dark px-4 py-5"
+            >
+              <dt className="eyebrow text-[0.6875rem] text-green-soft">
+                {r.label}
+              </dt>
+              <dd className="mt-2 flex items-baseline gap-1.5 text-jd-yellow">
+                <span className="text-[2.5rem] leading-[0.9] font-bold tracking-tight tabular-nums">
+                  {formatearNumero(
+                    resultado[r.id],
+                    DECIMALES[r.id],
+                    calculadora.locale,
+                  )}
+                </span>
                 {r.unit ? (
-                  <span className="ml-1 text-base font-medium text-green-soft">{r.unit}</span>
+                  <span className="text-lg font-bold text-white">{r.unit}</span>
                 ) : null}
               </dd>
-              <dt className="mt-2 eyebrow text-green-soft">{r.label}</dt>
             </div>
           ))}
         </dl>

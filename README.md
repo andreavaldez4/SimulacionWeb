@@ -1,65 +1,76 @@
-# SimulacionWeb
+# Agentic Harvest
 
-Sitio que acompaña la presentación de **MultiagentesReto** a John Deere (socio formador).
-Los asistentes lo abren con un QR desde su celular mientras la demo de Unity corre en el proyector.
+Companion site for the **Agentic Harvest** presentation to John Deere (training partner).
+Attendees open it by QR from their phone while the Unity demo runs on the projector.
 
-## Correr en local
+## Run locally
 
 ```bash
 pnpm install
 pnpm dev      # http://localhost:3000
-pnpm build    # build de producción
+pnpm build    # production build
 ```
 
-## Restricción de red
+## Network constraint
 
-El sitio se abre desde el WiFi de invitados de una oficina corporativa. **Todo el
-contenido de la presentación renderiza sin ninguna llamada de red**: la tipografía se
-auto-hospeda en el build (`next/font`), los diagramas son SVG inline y la calculadora
-corre 100% en el cliente. No hay spinners en el contenido principal.
+The site is opened over a corporate guest WiFi. **All presentation content renders with
+zero network calls**: the typeface is self hosted at build time (`next/font`), diagrams
+are inline SVG, and the calculator runs entirely client side. No spinners in the main
+content.
 
-## Publicar el video de la simulación
+## Publishing the simulation video
 
-1. Graba la simulación desde Unity y exporta a MP4 (H.264 + AAC).
-2. Deja el archivo en `public/media/simulacion.mp4`.
-3. En `content/project.ts`, cambia `hero.video.fallbackSrc` a `'/media/simulacion.mp4'`.
+1. Record the simulation from Unity and export to MP4 (H.264 + AAC).
+2. Put the file at `public/media/simulacion.mp4`.
+3. In `content/project.ts`, set `hero.video.fallbackSrc` to `'/media/simulacion.mp4'`.
 
-Mientras `fallbackSrc` esté vacío, el hero muestra un placeholder estático en vez de un
-reproductor cargando. Sirviendo el archivo desde `/public` el video no depende de la API.
+While `fallbackSrc` is empty the hero shows a static placeholder instead of a player
+stuck loading. Serving from `/public` keeps the video independent of the API.
 
-## Conectar la API (APIReto)
+## Model images
 
-`lib/api/` está lista pero **no conectada**. El cliente tiene timeout de 3 s con
-`AbortController`, nunca lanza excepciones y siempre devuelve datos de respaldo.
-Para activarla, define:
+Drop a render of each 3D model in `public/models/`. See `public/models/README.md` for
+the expected filenames. Missing files fall back to a drawn placeholder, so the grid
+never breaks.
+
+## Connecting the API (APIReto)
+
+`lib/api/` is ready but **not wired up**. The client has a 3s `AbortController` timeout,
+never throws, and always returns fallback data. To enable it, set:
 
 ```bash
 NEXT_PUBLIC_API_URL=https://<host>:5001
 ```
 
-Sin esa variable la capa queda inerte y responde `disabled`.
+Without that variable the layer stays inert and returns `disabled`.
 
-> **Nota:** la API corre con `ssl_context="adhoc"` (certificado autofirmado). Los
-> navegadores móviles bloquean esos certificados, así que un celular en el WiFi de
-> invitados **no** podrá alcanzarla sin un certificado válido. Por eso el video se sirve
-> desde `/public` para la presentación.
+> **Note:** the API runs with `ssl_context="adhoc"` (self signed certificate). Mobile
+> browsers block those, so a phone on the guest WiFi **cannot** reach it without a valid
+> certificate. That is why the video is served from `/public` for the presentation.
 
-## Estructura
+## Branding
+
+The site uses its own **Agentic Harvest** wordmark. John Deere is referenced in text only
+("training partner"); their logo and assets are deliberately not used, and the footer
+carries a non affiliation disclaimer. `public/JUANVENADO.svg` and `public/logojuan.png`
+are their marks and are not referenced by the site.
+
+## Structure
 
 ```
-app/           layout, page (solo compone secciones), globals.css (tokens)
+app/           layout, page (composes sections only), globals.css (tokens)
 components/
   sections/    Hero, Algoritmo, Arquitectura, Calculadora, Equipo, Roadmap, Footer
-  diagrams/    SVG puros del algoritmo
-  calculator/  calculadora y preview del campo (únicos client components con estado)
-  ui/          shadcn — no editar a mano
+  diagrams/    pure algorithm SVGs
+  calculator/  calculator and field preview (the only stateful client components)
+  ui/          shadcn, do not hand edit
 lib/
-  harvest.ts   fórmulas puras (única definición)
+  harvest.ts   pure formulas (single definition)
   api/         client.ts, types.ts, fallback.ts
 content/
-  project.ts   TODO el texto visible, tipado
+  project.ts   ALL visible copy, typed
 ```
 
-Reglas: ningún componente contiene copy (se importa de `content/project.ts`), las
-fórmulas viven solo en `lib/harvest.ts`, y todo es Server Component salvo la nav
-(scroll-spy), la calculadora y el video.
+Rules: no component holds copy (it is imported from `content/project.ts`), formulas live
+only in `lib/harvest.ts`, and everything is a Server Component except the nav
+(scroll spy), the calculator, the video, and the model card image.
