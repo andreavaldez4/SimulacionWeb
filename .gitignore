@@ -5,3 +5,6 @@ next-env.d.ts
 *.local
 .DS_Store
 
+# Caché incremental de TypeScript: se regenera en cada build y subirlo rompe
+# el build de Vercel, porque trae rutas absolutas de la máquina que lo generó.
+*.tsbuildinfo
