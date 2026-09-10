@@ -1,19 +1,51 @@
 /** Tipos que espejan los modelos de APIReto (Flask + MySQL). */
 
-/** Corresponde a models/VideoSimulacion.py → to_dict(). */
+/**
+ * Ojo con los dos identificadores, porque la base los mezcla:
+ *
+ *  - `Simulaciones.Id` es un INT autoincremental. Es el que guarda
+ *    `Videos.SimulacionId` como llave foránea, y el que pide el procedure
+ *    `InsertarVideoSimulacion`.
+ *  - `Simulaciones.SimulacionId` es un VARCHAR(100) que pone quien corre la
+ *    simulación. Es el que pide `ObtenerVideoPorSimulacion`.
+ *
+ * O sea: se consulta por texto y se inserta por número. Unity solo conoce el
+ * de texto; la API traduce con `ObtenerOCrearSimulacion` al subir el archivo.
+ */
+
+/**
+ * Una corrida grabada: el video más los identificadores con los que la API la
+ * indexa. Es lo que devuelve `obtenerUltimasSimulaciones`.
+ */
 export type VideoSimulacion = {
+  /**
+   * INT autoincremental de `Simulaciones.Id`. Es la llave con la que se piden
+   * video y detalles: la API indexa todo por este número.
+   */
   Id: number
-  SimulacionId: number
-  /** Ruta del archivo de video grabado desde Unity. */
+  /** VARCHAR de Simulaciones.SimulacionId: el texto que pone Unity. */
+  SimulacionId: string
+  /** Nombre del archivo servido por la API bajo /Videos. */
   Ruta: string
-  /** Fecha en formato serializado por la API. */
-  FechaCreacion: string
+  /** Fecha del video, en el formato serializado por la API. */
+  FechaVideo: string
 }
 
-/** Cuerpo de POST /GuardarVideo. */
+/** Cuerpo de POST /GuardarVideo. Solo registra una ruta ya existente. */
 export type GuardarVideoBody = {
+  /** INT interno, tal como lo espera InsertarVideoSimulacion. */
   SimulacionId: number
   Ruta: string
+}
+
+/** Respuesta de POST /SubirVideo, que sí recibe el archivo. */
+export type SubirVideoRespuesta = {
+  status: 'success' | 'error'
+  message: string
+  SimulacionId?: string
+  Id?: number
+  Ruta?: string
+  Bytes?: number
 }
 
 /**

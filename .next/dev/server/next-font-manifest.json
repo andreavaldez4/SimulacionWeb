@@ -1,5 +1,8 @@
 {
   "app": {
+    "[project]/app/(site)/page": [
+      "static/media/ef1484efef1c9752-s.p.0vtrapzs99yg4.woff2"
+    ],
     "[project]/app/page": [
       "static/media/ef1484efef1c9752-s.p.0vtrapzs99yg4.woff2"
     ]

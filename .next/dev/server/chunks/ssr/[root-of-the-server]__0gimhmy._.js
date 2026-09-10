@@ -49,7 +49,10 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$content$2f$project$2e$ts__$5
 ;
 const metadata = {
     title: __TURBOPACK__imported__module__$5b$project$5d2f$content$2f$project$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["site"].title,
-    description: __TURBOPACK__imported__module__$5b$project$5d2f$content$2f$project$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["site"].description
+    description: __TURBOPACK__imported__module__$5b$project$5d2f$content$2f$project$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["site"].description,
+    icons: {
+        icon: '/favicon.svg'
+    }
 };
 const viewport = {
     colorScheme: 'light',
@@ -69,24 +72,24 @@ function RootLayout({ children }) {
                     children: "Skip to content"
                 }, void 0, false, {
                     fileName: "[project]/app/layout.tsx",
-                    lineNumber: 33,
+                    lineNumber: 36,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$site$2d$nav$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SiteNav"], {}, void 0, false, {
                     fileName: "[project]/app/layout.tsx",
-                    lineNumber: 39,
+                    lineNumber: 42,
                     columnNumber: 9
                 }, this),
                 children
             ]
         }, void 0, true, {
             fileName: "[project]/app/layout.tsx",
-            lineNumber: 32,
+            lineNumber: 35,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/layout.tsx",
-        lineNumber: 31,
+        lineNumber: 34,
         columnNumber: 5
     }, this);
 }
@@ -154,6 +157,8 @@ __turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$componen
     ()=>nav,
     "roadmap",
     ()=>roadmap,
+    "simulaciones",
+    ()=>simulaciones,
     "site",
     ()=>site
 ]);
@@ -175,6 +180,10 @@ const nav = {
         {
             id: "algoritmo",
             label: "Algorithm"
+        },
+        {
+            id: "simulaciones",
+            label: "Simulations"
         },
         {
             id: "calculadora",
@@ -201,6 +210,12 @@ const hero = {
      * To publish: drop the file at public/media/simulacion.mp4 and set this to
      * '/media/simulacion.mp4'.
      */ fallbackSrc: "",
+        /**
+     * Simulaciones.SimulacionId (VARCHAR) of the run whose recording is shown.
+     * Unity stamps this same string on the clip it uploads, so both sides must
+     * agree on it. Leave it empty to skip the API entirely and only use
+     * fallbackSrc.
+     */ simulacionId: "cosecha-con-assets",
         posterAlt: "View of the autonomous harvesting simulation in Unity 6",
         unavailable: "The demo runs live on the projector during the presentation."
     },
@@ -291,37 +306,6 @@ const arquitectura = {
         {
             title: "Tractor (follower)",
             detail: "Holds its lateral position relative to the leader."
-        }
-    ],
-    scriptsTitle: "Project scripts",
-    scripts: [
-        {
-            name: "Cosechadora.cs",
-            description: "Lays out the lanes, executes the headland turns and cuts the stalks under the header."
-        },
-        {
-            name: "TractorAlLado.cs",
-            description: "Keeps the tractor and its trailer alongside the combine as it advances."
-        },
-        {
-            name: "ParcelaSpawner.cs",
-            description: "Procedurally generates the terrain, the stalks and the environment props."
-        },
-        {
-            name: "PanelConfiguracionUI.cs",
-            description: "Builds the interface where the parameters are set before simulating."
-        },
-        {
-            name: "ConfiguracionSimulacion.cs",
-            description: "Data bridge that survives the scene change and carries the configuration."
-        },
-        {
-            name: "SelectorModelo.cs",
-            description: "Lets you choose which 3D model is instantiated per machine."
-        },
-        {
-            name: "CameraMove.cs",
-            description: "Drives the four observation cameras and the switching between them."
         }
     ],
     chipsTitle: "Stack",
@@ -537,6 +521,19 @@ const roadmap = {
     ],
     businessTitle: "Why it matters",
     business: "Every one of these pieces points at the same place: precision agriculture. A well planned route burns less fuel, a lane pattern without overlap avoids harvesting the same strip twice, and a fleet that coordinates on its own cuts the idle time between passes. What is a university simulation here is, out in the field, measurable operating margin."
+};
+const simulaciones = {
+    id: "simulaciones",
+    eyebrow: "Recorded runs",
+    title: "Simulations",
+    intro: "The three most recent runs uploaded from Unity. Each recording comes with its insights report: the same KPIs and charts the dashboard shows inside the simulation, in a printable PDF.",
+    /** Encabezado de cada corrida. `n` lo sustituye el componente. */ runLabel: "Run",
+    latestBadge: "Latest",
+    videoUnavailable: "Recording not reachable from this network.",
+    downloadPdf: "Download PDF insights",
+    downloadPdfHint: "Opens the report and prints it as a PDF.",
+    empty: "No runs recorded yet. Upload a simulation from Unity and it will appear here.",
+    offline: "The simulation database is not reachable from this network. The recorded runs appear when the site is opened next to the API."
 };
 const footer = {
     teamTitle: "Team",

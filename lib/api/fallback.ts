@@ -15,9 +15,9 @@ export const FALLBACK_VIDEOS: VideoSimulacion[] = hero.video.fallbackSrc
   ? [
       {
         Id: 0,
-        SimulacionId: 0,
+        SimulacionId: hero.video.simulacionId,
         Ruta: hero.video.fallbackSrc,
-        FechaCreacion: '',
+        FechaVideo: '',
       },
     ]
   : []

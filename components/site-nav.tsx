@@ -68,7 +68,15 @@ export function SiteNav() {
           </span>
         </a>
 
-        <ul className="grid w-full grid-cols-4 md:flex md:w-auto md:justify-self-center md:gap-1">
+        {/* En móvil una columna por item: se declara con style porque el número
+            de columnas lo decide nav.items, y Tailwind no puede generar la
+            clase a partir de un valor que solo existe en runtime. */}
+        <ul
+          style={{
+            gridTemplateColumns: `repeat(${nav.items.length}, minmax(0, 1fr))`,
+          }}
+          className="grid w-full md:flex md:w-auto md:justify-self-center md:gap-1 md:[grid-template-columns:none]"
+        >
           {nav.items.map((item) => {
             const isActive = active === item.id;
             return (
@@ -77,7 +85,13 @@ export function SiteNav() {
                   href={`#${item.id}`}
                   aria-current={isActive ? "true" : undefined}
                   className={[
-                    "border-t-2 px-3 py-3 text-center eyebrow transition-colors md:border-t-0 md:border-b-2 md:px-4 md:py-4",
+                    // En móvil el ancho lo reparte el grid entre 5 items, así
+                    // que el padding lateral se quita y el tracking del eyebrow
+                    // se recorta: "Simulations" no cabe con px-3 en 390px y las
+                    // etiquetas se empalmaban entre sí.
+                    "border-t-2 px-0.5 py-3 text-center text-[10px] leading-tight eyebrow [letter-spacing:0.02em] transition-colors",
+                    "min-[360px]:text-[11px] min-[360px]:[letter-spacing:0.04em]",
+                    "md:border-t-0 md:border-b-2 md:px-4 md:py-4 md:text-xs md:[letter-spacing:0.12em]",
                     isActive
                       ? "border-jd-yellow text-jd-yellow"
                       : "border-transparent text-green-soft hover:text-white",

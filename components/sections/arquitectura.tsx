@@ -28,17 +28,7 @@ export function Arquitectura() {
         ))}
       </ol>
 
-      <h3 className="eyebrow mb-4 text-jd-green">{arquitectura.scriptsTitle}</h3>
-      <ul className="grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 lg:grid-cols-4">
-        {arquitectura.scripts.map((script) => (
-          <li key={script.name} className="border border-line bg-white p-4">
-            <code className="text-sm font-bold text-green-dark">{script.name}</code>
-            <p className="mt-2 text-sm leading-normal text-ink-muted">{script.description}</p>
-          </li>
-        ))}
-      </ul>
-
-      <h3 className="eyebrow mt-12 mb-4 text-jd-green">{arquitectura.chipsTitle}</h3>
+      <h3 className="eyebrow mb-4 text-jd-green">{arquitectura.chipsTitle}</h3>
       <ul className="flex list-none flex-wrap gap-2 p-0">
         {arquitectura.chips.map((chip) => (
           <li

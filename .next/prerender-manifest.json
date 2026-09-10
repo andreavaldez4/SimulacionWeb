@@ -1,34 +1,6 @@
 {
   "version": 4,
   "routes": {
-    "/": {
-      "routeType": "page",
-      "response": "complete",
-      "compute": "static",
-      "htmlSize": 119770,
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "next-action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/",
-      "dataRoute": "/index.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/_global-error": {
       "routeType": "page",
       "response": "complete",
@@ -62,7 +34,7 @@
       "routeType": "page",
       "response": "complete",
       "compute": "static",
-      "htmlSize": 11231,
+      "htmlSize": 6883,
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -85,13 +57,41 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
+    },
+    "/report": {
+      "routeType": "page",
+      "response": "complete",
+      "compute": "static",
+      "htmlSize": 36596,
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "next-action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/report",
+      "dataRoute": "/report.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
     }
   },
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "b1f37cd5fbfadda3beb1d062526d3de9",
-    "previewModeSigningKey": "5b2c2ad00466a6b75c6f6a047824cd439855c32048a7985fabc24b90c114b08a",
-    "previewModeEncryptionKey": "3c515817323817c3b4c798f51e691ad618840e33d1f0bf8ff1999c40a9221742"
+    "previewModeId": "a8d629d1f3ac61bfed33cb1de8eb3618",
+    "previewModeSigningKey": "f621fcd9109bdf75fbb45204c957d7698c9c003cd9d36ea5f4fc2d1bd1ec5999",
+    "previewModeEncryptionKey": "f8b512d152d1cdfc7b92457f0f61920a000f9a9f1d67ad971168e81d23502632"
   }
 }

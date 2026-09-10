@@ -20,11 +20,6 @@ export type DiagramCopy = {
   body: string;
 };
 
-export type ScriptCard = {
-  name: string;
-  description: string;
-};
-
 export type FlowStep = {
   title: string;
   detail: string;
@@ -76,6 +71,7 @@ export const nav = {
   items: [
     { id: "inicio", label: "Home" },
     { id: "algoritmo", label: "Algorithm" },
+    { id: "simulaciones", label: "Simulations" },
     { id: "calculadora", label: "Calculator" },
     { id: "equipo", label: "Team" },
   ] satisfies NavItem[],
@@ -98,6 +94,13 @@ export const hero = {
      * '/media/simulacion.mp4'.
      */
     fallbackSrc: "",
+    /**
+     * Simulaciones.SimulacionId (VARCHAR) of the run whose recording is shown.
+     * Unity stamps this same string on the clip it uploads, so both sides must
+     * agree on it. Leave it empty to skip the API entirely and only use
+     * fallbackSrc.
+     */
+    simulacionId: "cosecha-con-assets",
     posterAlt: "View of the autonomous harvesting simulation in Unity 6",
     unavailable: "The demo runs live on the projector during the presentation.",
   },
@@ -189,44 +192,6 @@ export const arquitectura = {
       detail: "Holds its lateral position relative to the leader.",
     },
   ] satisfies FlowStep[],
-  scriptsTitle: "Project scripts",
-  scripts: [
-    {
-      name: "Cosechadora.cs",
-      description:
-        "Lays out the lanes, executes the headland turns and cuts the stalks under the header.",
-    },
-    {
-      name: "TractorAlLado.cs",
-      description:
-        "Keeps the tractor and its trailer alongside the combine as it advances.",
-    },
-    {
-      name: "ParcelaSpawner.cs",
-      description:
-        "Procedurally generates the terrain, the stalks and the environment props.",
-    },
-    {
-      name: "PanelConfiguracionUI.cs",
-      description:
-        "Builds the interface where the parameters are set before simulating.",
-    },
-    {
-      name: "ConfiguracionSimulacion.cs",
-      description:
-        "Data bridge that survives the scene change and carries the configuration.",
-    },
-    {
-      name: "SelectorModelo.cs",
-      description:
-        "Lets you choose which 3D model is instantiated per machine.",
-    },
-    {
-      name: "CameraMove.cs",
-      description:
-        "Drives the four observation cameras and the switching between them.",
-    },
-  ] satisfies ScriptCard[],
   chipsTitle: "Stack",
   chips: [
     "Unity 6",
@@ -425,6 +390,27 @@ export const roadmap = {
   businessTitle: "Why it matters",
   business:
     "Every one of these pieces points at the same place: precision agriculture. A well planned route burns less fuel, a lane pattern without overlap avoids harvesting the same strip twice, and a fleet that coordinates on its own cuts the idle time between passes. What is a university simulation here is, out in the field, measurable operating margin.",
+} as const;
+
+export const simulaciones = {
+  id: "simulaciones",
+  eyebrow: "Recorded runs",
+  title: "Simulations",
+  intro:
+    "The three most recent runs uploaded from Unity. Each recording comes with its insights report: the same KPIs and charts the dashboard shows inside the simulation, in a printable PDF.",
+
+  /** Encabezado de cada corrida. `n` lo sustituye el componente. */
+  runLabel: "Run",
+  latestBadge: "Latest",
+  videoUnavailable: "Recording not reachable from this network.",
+
+  downloadPdf: "Download PDF insights",
+  downloadPdfHint: "Opens the report and prints it as a PDF.",
+
+  empty:
+    "No runs recorded yet. Upload a simulation from Unity and it will appear here.",
+  offline:
+    "The simulation database is not reachable from this network. The recorded runs appear when the site is opened next to the API.",
 } as const;
 
 export const footer = {
