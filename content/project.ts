@@ -59,6 +59,16 @@ export type RoadmapItem = {
   detail: string;
 };
 
+/** Una corrida grabada, servida desde /public. */
+export type SimulationRun = {
+  /** El identificador que Unity estampa en la corrida. */
+  id: string;
+  /** Ruta del archivo en /public. */
+  src: string;
+  /** Fecha de la grabación, como la registró la simulación. */
+  date: string;
+};
+
 export const site = {
   title: "Agentic Harvest | Autonomous harvesting simulated in Unity 6",
   description:
@@ -397,20 +407,43 @@ export const simulaciones = {
   eyebrow: "Recorded runs",
   title: "Simulations",
   intro:
-    "The three most recent runs uploaded from Unity. Each recording comes with its insights report: the same KPIs and charts the dashboard shows inside the simulation, in a printable PDF.",
+    "Three runs recorded from Unity. Each recording comes with its insights report: the same KPIs and charts the dashboard shows inside the simulation, in a printable PDF.",
 
   /** Encabezado de cada corrida. `n` lo sustituye el componente. */
   runLabel: "Run",
   latestBadge: "Latest",
-  videoUnavailable: "Recording not reachable from this network.",
+  videoUnavailable: "Recording not available.",
 
   downloadPdf: "Download PDF insights",
   downloadPdfHint: "Opens the report and prints it as a PDF.",
 
-  empty:
-    "No runs recorded yet. Upload a simulation from Unity and it will appear here.",
-  offline:
-    "The simulation database is not reachable from this network. The recorded runs appear when the site is opened next to the API.",
+  /**
+   * Las corridas que se muestran, servidas desde /public.
+   *
+   * Están en el repositorio y no detrás de la API a propósito: la API corre en
+   * localhost, así que un sitio desplegado (Vercel) no puede alcanzarla, y el
+   * WiFi de invitados tampoco. Con los archivos aquí la sección se ve igual en
+   * el despliegue público y sin conexión.
+   *
+   * Para reemplazar una grabación basta con sobrescribir el archivo.
+   */
+  runs: [
+    {
+      id: "cosecha-con-assets",
+      src: "/videos/run-1.mp4",
+      date: "2026-09-09 23:15:52",
+    },
+    {
+      id: "cosecha-con-assets",
+      src: "/videos/run-2.mp4",
+      date: "2026-09-09 22:51:39",
+    },
+    {
+      id: "cosecha-con-assets",
+      src: "/videos/run-3.mp4",
+      date: "2026-09-09 22:42:37",
+    },
+  ] satisfies SimulationRun[],
 } as const;
 
 export const footer = {

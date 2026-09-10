@@ -1,22 +1,16 @@
 import { Section, SectionHeader } from "@/components/section";
-import { simulaciones } from "@/content/project";
-import { obtenerUltimasSimulaciones, urlDeVideo } from "@/lib/api/client";
-import type { VideoSimulacion } from "@/lib/api/types";
+import { simulaciones, type SimulationRun } from "@/content/project";
 
 /**
- * Últimas corridas grabadas.
+ * Las corridas grabadas, cada una con su reporte de insights en PDF.
  *
- * Server Component: la lista de videos se pide en el servidor, así que el
- * navegador del asistente nunca tiene que alcanzar la API (que corre con
- * certificado autofirmado y no es accesible desde un teléfono en el WiFi de
- * invitados). Solo el archivo de video se pide desde el cliente, y si no carga
- * la tarjeta lo dice en vez de quedarse en un reproductor vacío.
- *
- * Las métricas ya no se leen de la base: cada corrida ofrece su reporte de
- * insights en PDF, que se genera desde /report.
+ * Los videos se sirven desde /public y se declaran en content/project.ts: no
+ * hay llamada de red detrás de esta sección. Es lo que permite que se vea igual
+ * en el despliegue público (donde la API en localhost no existe) y en la
+ * presentación sin conexión.
  */
 
-/** Fecha del video en algo leíble; si la API manda basura, se muestra cruda. */
+/** Fecha de la grabación en algo leíble; si viene rara, se muestra cruda. */
 function fecha(valor: string): string {
   const d = new Date(valor.replace(" ", "T"));
   if (Number.isNaN(d.getTime())) return valor;
@@ -30,15 +24,13 @@ function fecha(valor: string): string {
   });
 }
 
-function Corrida({ run, indice }: { run: VideoSimulacion; indice: number }) {
-  const src = urlDeVideo(run.Ruta);
-
+function Corrida({ run, indice }: { run: SimulationRun; indice: number }) {
   return (
     <article className="border-t-2 border-jd-green pt-6">
       <header className="mb-6 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
         <h3 className="text-xl font-bold tracking-tight text-green-dark md:text-2xl">
           {simulaciones.runLabel} {indice + 1}
-          <span className="ml-3 font-normal text-ink-muted">{run.SimulacionId}</span>
+          <span className="ml-3 font-normal text-ink-muted">{run.id}</span>
         </h3>
 
         <div className="flex items-center gap-3">
@@ -47,7 +39,7 @@ function Corrida({ run, indice }: { run: VideoSimulacion; indice: number }) {
               {simulaciones.latestBadge}
             </span>
           ) : null}
-          <time className="text-sm text-ink-muted">{fecha(run.FechaVideo)}</time>
+          <time className="text-sm text-ink-muted">{fecha(run.date)}</time>
         </div>
       </header>
 
@@ -56,19 +48,13 @@ function Corrida({ run, indice }: { run: VideoSimulacion; indice: number }) {
         ancho de la sección se come la página entera en escritorio.
       */}
       <div className="max-w-4xl">
-        {src ? (
-          <video
-            className="aspect-video w-full border border-line bg-green-dark object-contain"
-            src={src}
-            controls
-            playsInline
-            preload="metadata"
-          />
-        ) : (
-          <div className="grid aspect-video w-full place-items-center border border-line bg-green-light px-6 text-center">
-            <p className="text-sm text-ink-muted">{simulaciones.videoUnavailable}</p>
-          </div>
-        )}
+        <video
+          className="aspect-video w-full border border-line bg-green-dark object-contain"
+          src={run.src}
+          controls
+          playsInline
+          preload="metadata"
+        />
       </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
@@ -106,10 +92,7 @@ function Corrida({ run, indice }: { run: VideoSimulacion; indice: number }) {
   );
 }
 
-export async function Simulaciones() {
-  const res = await obtenerUltimasSimulaciones();
-  const runs = res.data;
-
+export function Simulaciones() {
   return (
     <Section id={simulaciones.id} tone="light">
       <SectionHeader
@@ -118,17 +101,11 @@ export async function Simulaciones() {
         intro={simulaciones.intro}
       />
 
-      {runs.length === 0 ? (
-        <p className="max-w-[62ch] border-t border-line pt-6 text-lg text-ink-muted">
-          {res.source === "api" ? simulaciones.empty : simulaciones.offline}
-        </p>
-      ) : (
-        <div className="flex flex-col gap-14 md:gap-20">
-          {runs.map((run, i) => (
-            <Corrida key={run.Id} run={run} indice={i} />
-          ))}
-        </div>
-      )}
+      <div className="flex flex-col gap-14 md:gap-20">
+        {simulaciones.runs.map((run, i) => (
+          <Corrida key={run.src} run={run} indice={i} />
+        ))}
+      </div>
     </Section>
   );
 }
